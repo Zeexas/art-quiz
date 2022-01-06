@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Stoke&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./src/assets/img/crop/203.webp" />
+    <title>Art-quiz</title>
+  </head>
+  <body>
+    <div class="page-container">
+      <header id="header"></header>
+
+      <div id="app">
+        <div id="start-page" class="start-page">
+          <div class="title"><span class="artText">Art</span> Quiz</div>
+          <div class="quiz-menu">
+            <a class="quiz-type-link">
+              <div id="artists-quiz" class="artists-quiz quiz-type">
+                <div class="menu-icon">
+                  <img class="" src="src/assets/img/crop/203.webp" alt="" />
+                </div>
+                <span class="quiz-type-title"><strong>Художники</strong></span>
+              </div>
+            </a>
+            <a class="quiz-type-link">
+              <div id="picture-quiz" class="picture-quiz quiz-type">
+                <div class="menu-icon">
+                  <img src="src/assets/img/crop/141.webp" alt="" />
+                </div>
+                <span class="quiz-type-title"><strong>Картины</strong></span>
+              </div>
+            </a>
+          </div>
+          <div id="settings" class="settings"></div>
+        </div>
+
+        <div id="settings-page" class="settings-page hide">
+          <div class="settings-header">
+            <div>
+              <span class="back"></span>
+              <span>Настройки</span>
+            </div>
+            <div id="cross" class="cross"></div>
+          </div>
+          <div class="settings-body">
+            <div class="volume">
+              <div class="set-titles">Звук</div>
+              <input
+                type="range"
+                id="volume-bar"
+                class="volume-bar"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.30"
+              />
+            </div>
+            <div class="time-on">
+              <div class="time-on-title set-titles">Игра на время</div>
+              <div class="time-on-item">
+                <div class="time-on-text">Выкл / вкл</div>
+                <label class="toggle">
+                  <input class="timeOn" type="checkbox" checked />
+                  <div class="switch"></div>
+                </label>
+              </div>
+            </div>
+            <div class="time-set">
+              <div class="set-titles">Время на размышление</div>
+              <div class="time-setter">
+                <div id="minus" class="minus"></div>
+                <div class="time-limit">20</div>
+                <div id="plus" class="plus"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="artists-page" class="category-page hide">
+          <div id="art-settings" class="settings"></div>
+          <div class="category-header">
+            <div class="logo"><span class="logo-art">Art</span> Quiz</div>
+            <div id="art-to-start" class="nav-item"></div>
+          </div>
+          <div class="artist-category"></div>
+        </div>
+
+        <div id="art-quiz-card" class="art-quiz-card quiz-card hide">
+          <div id="art-quiz-timer" class="quiz-timer">
+            <div id="art-timer-end" class="timer-end"></div>
+            <progress
+              id="art-timer-progress"
+              class="timer-progress"
+              value=""
+              max=""
+            ></progress>
+            <div id="art-timer" class="timer"></div>
+          </div>
+          <div class="art-question_nav">
+            <div class="art-question">Кто автор данной картины?</div>
+            <div class="nav-category-art"></div>
+          </div>
+          <div class="art-image">
+            <!-- <img class="art-image-pic" src="src/assets/img/full/3full.webp" alt="question picture"> -->
+          </div>
+          <div class="art-answer-block">
+            <div class="art-answer-1 art-answer"></div>
+            <div class="art-answer-2 art-answer"></div>
+            <div class="art-answer-3 art-answer"></div>
+            <div class="art-answer-4 art-answer"></div>
+          </div>
+        </div>
+
+        <div class="art-card-result-section">
+          <div class="art-card-result">
+            <div class="art-card-result-pic-box">
+              <!-- <img class="art-card-result-pic" src="src/assets/img/crop/3.webp"" alt="result picture"> -->
+            </div>
+            <div class="art-result-check">
+              <!-- <img src="src/assets/img/svg/true.png" alt="true-false icon"> -->
+            </div>
+            <div class="art-card-result-text">
+              <div class="art-result-name"></div>
+              <div class="art-result-author-year"></div>
+            </div>
+            <div class="art-result-next">Продолжить</div>
+          </div>
+        </div>
+
+        <div class="art-quiz-result-section">
+          <div class="art-quiz-result">
+            <div class="art-cup">
+              <img src="src/assets/img/svg/cup.png" alt="cup-icon" />
+            </div>
+            <div class="art-congrats"></div>
+            <div class="art-quiz-score"></div>
+            <div class="art-quiz-back">Продолжить</div>
+          </div>
+        </div>
+
+        <div id="picture-page" class="category-page hide">
+          <div id="pic-settings" class="settings"></div>
+          <div class="category-header">
+            <div class="logo"><span class="logo-art">Art</span> Quiz</div>
+            <div id="pic-to-start" class="nav-item"></div>
+          </div>
+          <div class="picture-category"></div>
+        </div>
+
+        <div id="pic-quiz-card" class="pic-quiz-card quiz-card hide">
+          <div id="pic-quiz-timer" class="quiz-timer">
+            <div id="pic-timer-end" class="timer-end"></div>
+            <progress
+              id="pic-timer-progress"
+              class="timer-progress"
+              value=""
+              max=""
+            ></progress>
+            <div id="pic-timer" class="timer"></div>
+          </div>
+          <div class="pic-question_nav">
+            <div class="pic-question"></div>
+            <div class="nav-category-pic"></div>
+          </div>
+
+          <div class="pic-answer-block">
+            <div class="pic-answer-1 pic-answer"></div>
+            <div class="pic-answer-2 pic-answer"></div>
+            <div class="pic-answer-3 pic-answer"></div>
+            <div class="pic-answer-4 pic-answer"></div>
+          </div>
+        </div>
+
+        <div class="pic-card-result-section">
+          <div class="pic-card-result">
+            <div class="pic-card-result-pic-box">
+              <!-- <img class="art-card-result-pic" src="src/assets/img/crop/3.webp"" alt="result picture"> -->
+            </div>
+            <div class="pic-result-check">
+              <!-- <img src="src/assets/img/svg/true.png" alt="true-false icon"> -->
+            </div>
+            <div class="pic-card-result-text">
+              <div class="pic-result-name"></div>
+              <div class="pic-result-author-year"></div>
+            </div>
+            <div class="pic-result-next">Продолжить</div>
+          </div>
+        </div>
+
+        <div class="pic-quiz-result-section">
+          <div class="pic-quiz-result">
+            <div class="pic-cup">
+              <img src="src/assets/img/svg/cup.png" alt="cup-icon" />
+            </div>
+            <div class="pic-congrats"></div>
+            <div class="pic-quiz-score"></div>
+            <div class="pic-quiz-back">Продолжить</div>
+          </div>
+        </div>
+      </div>
+
+      <footer id="footer">
+        <div class="links">
+          <a href="https://rs.school/js/" target="_blank">
+            <img
+              class="rsschool"
+              src="src/assets/img/svg/rs_school_js.png"
+              alt="rs_school_js"
+            />
+          </a>
+          <time>2021</time>
+          <a href="https://github.com/Zeexas" target="_blank">
+            <img
+              class="github"
+              src="src/assets/img/svg/github.png"
+              alt="github"
+            />
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="src/index.js" type="module"></script>
+  </body>
+</html>
